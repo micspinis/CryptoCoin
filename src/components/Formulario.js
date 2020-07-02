@@ -34,7 +34,7 @@ const Formulario = () => {
     ]
 
     // Usando custon hook useMoneda
-    const [ moneda, SelectMonedas, actualizarState] = useMoneda("Elije tu Moneda", "", MONEDAS);
+    const [ moneda, SelectMonedas ] = useMoneda("Elije tu Moneda", "", MONEDAS);
 
     return ( 
         <form>

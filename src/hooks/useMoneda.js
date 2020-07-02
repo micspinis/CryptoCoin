@@ -14,9 +14,12 @@ const useMoneda = ( label, stateInicial, opciones ) => {
     const Seleccionar = (params) => (
         <Fragment>
             <label> {label} </label>
-            <select>
+            <select
+                onChange={ e => actualizarState(e.target.value) }
+                value={state}
+            >
                 <option value="">- Seleccione -</option>
-                {opciones.map( opcion => (<option value={opcion.codigo} >{opcion.nombre}</option>) )}
+                {opciones.map( opcion => (<option key={opcion.codigo} value={opcion.codigo} >{opcion.nombre}</option>) )}
             </select>
         </Fragment>
     );
