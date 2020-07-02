@@ -32,7 +32,6 @@ const useCriptomoneda = ( label, stateInicial, opciones ) => {
     // state de nuestro custom hook
     const [ state, actualizarState ] = useState(stateInicial);
 
-
     const SelectCripto = (params) => (
         <Fragment>
             <Label> {label} </Label>
