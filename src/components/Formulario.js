@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 
 // Custon hook
 import useMoneda from '../hooks/useMoneda';
+import useCriptomoneda from '../hooks/useCriptomoneda';
 
 const Boton = styled.input`
     margin-top: 20px;
@@ -36,10 +37,15 @@ const Formulario = () => {
     // Usando custon hook useMoneda
     const [ moneda, SelectMonedas ] = useMoneda("Elije tu Moneda", "", MONEDAS);
 
+    // Usando custom hook useCriptomoneda
+    const [ criptomoneda, SelectCripto ] = useCriptomoneda('Elije tu criptomoneda', '');
+
     return ( 
         <form>
             
             <SelectMonedas />
+
+            <SelectCripto />
 
             <Boton 
                 type="submit"
