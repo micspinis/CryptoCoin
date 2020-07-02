@@ -25,8 +25,16 @@ const Boton = styled.input`
 
 const Formulario = () => {
 
+    // Lista de monedas
+    const MONEDAS = [
+        {codigo:'USD', nombre:'Dolar americano'},
+        {codigo:'MXN', nombre:'Peso Mexicano'},
+        {codigo:'EUR', nombre:'Euro'},
+        {codigo:'GBP', nombre:'Libra Esterlina'}
+    ]
+
     // Usando custon hook useMoneda
-    const [ moneda, SelectMonedas, actualizarState] = useMoneda()
+    const [ moneda, SelectMonedas, actualizarState] = useMoneda("Elije tu Moneda", "", MONEDAS);
 
     return ( 
         <form>

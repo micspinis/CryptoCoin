@@ -5,17 +5,18 @@ import React, { Fragment, useState } from 'react';
 
 // Hemos visto que en los states retornarmos dos valores (el state, y la función que modifica el state) entonces al crear nuestro custom hook debemos hacer que se retornen esos dos valores, para logragar usamos tambien useState. 
 
-const useMoneda = () => {
+const useMoneda = ( label, stateInicial, opciones ) => {
 
     // state de nuestro custom hook
-    const [ state, actualizarState ] = useState('');
+    const [ state, actualizarState ] = useState(stateInicial);
 
 
     const Seleccionar = (params) => (
         <Fragment>
-            <label>Moneda</label>
+            <label> {label} </label>
             <select>
-                <option value="MXN">Peso Mexicano</option>
+                <option value="">- Seleccione -</option>
+                {opciones.map( opcion => (<option value={opcion.codigo} >{opcion.nombre}</option>) )}
             </select>
         </Fragment>
     );
